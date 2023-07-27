@@ -20,7 +20,7 @@ int _printf(const char *format, ...);
 int write_char(va_list args);
 int write_str(va_list args);
 int write_percent(va_list args __attribute__((unused)));
-int write_number(va_list args);
+int write_num(va_list args);
 int (*get_write_func(char s))(va_list);
 
 #endif
