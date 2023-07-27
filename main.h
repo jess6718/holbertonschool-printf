@@ -1,20 +1,26 @@
 #ifndef FUNCTION_HEADER
 #define FUNCTION_HEADER
+#include <stdarg.h>
 
 /**
- * struct type - struct type to match data type
+ * struct type_func - struct type to match data type
  *
- * @f_type: the data types
+ * @specifier: the data types
  * @f: The function associated
  */
 
-typedef struct type
+typedef struct type_func
 {
-	char *f_type;
-	void (*f) (va_list args);
-} type;
+	const char specifier;
+	int (*f)(va_list);
+} write_t;
 
-int _printf(char format);
-char write_c(char);
+int _putchar(char c);
+int _printf(const char *format, ...);
+int write_char(va_list args);
+int write_str(va_list args);
+int write_percent(void);
+int write_number(va_list args);
+int (*get_write_func(char s))(va_list);
 
 #endif
