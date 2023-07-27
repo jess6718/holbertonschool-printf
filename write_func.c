@@ -44,6 +44,12 @@ int write_str(va_list args)
 	char *str = va_arg(args, char *);
 
 	len = 0;
+
+	if (str == (char *)0)
+	{
+		str = "(null)";
+	}
+
 	while (str[len] != '\0')
 	{
 		_putchar(str[len]);
