@@ -81,7 +81,8 @@ int write_percent(va_list args __attribute__((unused)))
  */
 int write_num(va_list args)
 {
-        int i, j, abs_num, count, n;
+        int i, j, count, n;
+        unsigned int abs_num;
         int div = 1;
 
         n = va_arg(args, int);
