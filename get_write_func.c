@@ -16,6 +16,8 @@ int (*get_write_func(char s))(va_list)
 		{'c', write_char},
 		{'s', write_str},
 		{'%', write_percent},
+		{'d', write_num},
+		{'i', write_num},
 		{'\0', NULL}
 	};
 
