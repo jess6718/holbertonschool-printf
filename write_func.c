@@ -75,41 +75,41 @@ int write_percent(va_list args __attribute__((unused)))
 }
 
 /**
- * write_number - write a number passed to the function
- * @args - arguement list passed in
+ * write_num - write a number passed to the function
+ * @args: number input
  * Return: number of characters printed
  */
 int write_num(va_list args)
 {
-        int i, j, count, n;
-        unsigned int abs_num;
-        int div = 1;
+	int i, j, count, n;
+	unsigned int abs_num;
+	int div = 1;
 
-        n = va_arg(args, int);
-        count = 0;
-        if (n < 0)
-        {
-                abs_num = n * (-1);
-                count = count + _putchar('-');
-        }
-        else
-        {
-                abs_num = n;
-        }
+	n = va_arg(args, int);
+	count = 0;
+	if (n < 0)
+	{
+		abs_num = n * (-1);
+		count = count + _putchar('-');
+	}
+	else
+	{
+		abs_num = n;
+	}
 
-        i = 0;
-        while (abs_num / div > 9)
-        {
-                div = div * 10;
-                i = i + 1;
-        }
-        j = 0;
-        while (div != 0)
-        {
-                count = count + _putchar('0' + abs_num / div);
-                abs_num = abs_num % div;
-                div = div / 10;
-                j = j + 1;
-        }
-        return (count);
+	i = 0;
+	while (abs_num / div > 9)
+	{
+		div = div * 10;
+		i = i + 1;
+	}
+	j = 0;
+	while (div != 0)
+	{
+		count = count + _putchar('0' + abs_num / div);
+		abs_num = abs_num % div;
+		div = div / 10;
+		j = j + 1;
+	}
+	return (count);
 }
